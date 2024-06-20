@@ -9,7 +9,7 @@ This project focuses on detecting various types of boats in images and video in 
 - [Installation](#installation)
 - [Usage](#usage)
   - [Training](#training)
-  - [Detection](#detection)
+  - [Inference](#inference)
 - [Results](#results)
 
 ## Overview
@@ -49,6 +49,8 @@ The training data originates from [Kaggle](https://www.kaggle.com/datasets/kunal
     ```bash
     pip install -r requirements.txt
     ```
+
+Python Version 3.11.7 was used for this project.
 
 ## Usage
 
@@ -93,4 +95,4 @@ Trained models were evaluated qualitatively on two unseen videos for real-time d
 
 #### Example Detections
 
-![](https://i.imgur.com/gyP32WE.gif)
+![](figures/detection_video_ex_small-optimized.gif)
