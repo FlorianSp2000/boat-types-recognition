@@ -32,7 +32,7 @@ The model can detect the following boat classes:
 
 ## Training Data
 
-The training data originates from [Kaggle](https://www.kaggle.com/datasets/kunalgupta2616/boat-types-recognition?select=boat-types-recognition) and was manually annotated using RoboFlow. The annotated dataset is available under this [link](https://app.roboflow.com/floriansdatalake/boat-types-detection/3).
+The training data originates from [Kaggle](https://www.kaggle.com/datasets/kunalgupta2616/boat-types-recognition?select=boat-types-recognition) and was manually annotated using RoboFlow.
 
 ## Installation
 
@@ -54,7 +54,7 @@ The training data originates from [Kaggle](https://www.kaggle.com/datasets/kunal
 
 ### Training
 
-1. Open the `train.ipynb` notebook using Google Colab.
+1. Open the `train_yolov10.ipynb` notebook (used Google Colab for GPU resources).
 2. Follow the instructions in the notebook to set up the environment, upload data, and start the training process.
 3. Once the training is complete, the trained model weights will be saved and can be downloaded for local use.
 
@@ -67,19 +67,30 @@ The `detect.py` script can be used to perform detection on images and video stre
 Image Detection
 
 ```bash
-python detect.py models/yolov10-30ep-1.pt path/to/your/img.jpg --type image 
+python detect.py path/to/your/model.pt path/to/your/img.jpg --type image 
 ```
 
 Video Detection 
 
 ```bash
-python detect.py models/yolov10-30ep-1.pt path/to/your/video.mp4 --type video
+python detect.py path/to/your/model.pt path/to/your/video.mp4 --type video
 ```
+
+For using the best model, set model path to **models/yolov10-M-250ep-1.pt**.
+
 
 ## Results
 
-Trained models were evaluated qualitatively on two videos for real-time detection. The videos were taken from the perspective of another ship (i.e., front view).
+<p align="center">
+  <img src="figures/yolov10m_confusion_matrix_normalized.png" width=48%>
+  <img src="figures/yolov10m_results.png" width=48%> <br>
+  Results on the validation set during training.
+</p>
+
+
+Trained models were evaluated qualitatively on two unseen videos for real-time detection. 
 
 
 #### Example Detections
 
+![](https://i.imgur.com/gyP32WE.gif)

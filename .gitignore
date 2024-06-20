@@ -1,7 +1,7 @@
 /runs
 /dataset
-/models
-
+/models/pretrained
+/evaluation_results
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
